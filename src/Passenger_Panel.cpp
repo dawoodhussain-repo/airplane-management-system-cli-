@@ -25,7 +25,7 @@ Passeger_Panel::~Passeger_Panel() {
 
 bool Passeger_Panel::Check_Passenger(std::string username, std::string pass) {
     for (const auto& passenger : PassengerList) {
-        if (username == passenger.Username && pass == passenger.Password) {
+        if (username == passenger.getUsername() && pass == passenger.getPassword()) {
             return true;
         }
     }
@@ -34,7 +34,7 @@ bool Passeger_Panel::Check_Passenger(std::string username, std::string pass) {
 
 Passenger Passeger_Panel::SearchPassenger(std::string us, std::string pass) {
     for (const auto& passenger : PassengerList) {
-        if (passenger.Username == us && passenger.Password == pass) {
+        if (passenger.getUsername() == us && passenger.getPassword() == pass) {
             return passenger;
         }
     }
@@ -56,8 +56,8 @@ bool Passeger_Panel::BookSeat(std::string depart, std::string arrival, int no, P
 
 bool Passeger_Panel::UpdateUsername(std::string username, std::string pass, std::string newusername) {
     for (auto& passenger : PassengerList) {
-        if (passenger.Username == username && passenger.Password == pass) {
-            passenger.Username = newusername;
+        if (passenger.getUsername() == username && passenger.getPassword() == pass) {
+            passenger.setUsername(newusername);
             return true;
         }
     }
@@ -66,8 +66,8 @@ bool Passeger_Panel::UpdateUsername(std::string username, std::string pass, std:
 
 bool Passeger_Panel::UpdatePass(std::string username, std::string pass, std::string newpass) {
     for (auto& passenger : PassengerList) {
-        if (passenger.Username == username && passenger.Password == pass) {
-            passenger.Password = newpass;
+        if (passenger.getUsername() == username && passenger.getPassword() == pass) {
+            passenger.setPassword(newpass);
             return true;
         }
     }
@@ -165,7 +165,7 @@ Begining:
 
         // Check for duplicate CNIC
         for (const auto& passenger : PassengerList) {
-            if (passenger.CNIC == CNIC) {
+            if (passenger.getCNIC() == CNIC) {
                 throw std::invalid_argument("CNIC is already registered");
             }
         }

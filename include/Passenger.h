@@ -21,6 +21,16 @@ public:
 
     int getseat();
     std::string getname();
+    
+    // Additional getters
+    std::string getCNIC() const { return CNIC; }
+    int getAge() const { return Age; }
+    bool getVISA() const { return VISA; }
+    
+    // Additional setters
+    void setCNIC(const std::string& c) { CNIC = c; }
+    void setAge(int a) { Age = a; }
+    void setVISA(bool v) { VISA = v; }
 
     std::ostream& Display(std::ostream& out);
     friend std::ostream& operator<<(std::ostream& out, Passenger P);
