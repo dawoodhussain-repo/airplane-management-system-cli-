@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/RBTGL/Documents/GitHub/Airport-Management-System-C-",
-      "program": "c:/Users/RBTGL/Documents/GitHub/Airport-Management-System-C-/build/Debug/outDebug",
+      "cwd": "d:/Projects/Airport-Management-System-C--main",
+      "program": "d:/Projects/Airport-Management-System-C--main/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
